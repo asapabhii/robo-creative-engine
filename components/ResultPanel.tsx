@@ -75,7 +75,7 @@ export default function ResultPanel({ result }: ResultPanelProps) {
                   {platform}
                 </h4>
                 <div className="space-y-2">
-                  {posts.map((post, idx) => (
+                  {posts.map((post: string, idx: number) => (
                     <div key={idx} className="flex items-start justify-between gap-3 p-3 bg-gray-800/50 rounded">
                       <p className="text-gray-300 text-sm flex-1">{post}</p>
                       <CopyButton text={post} />
