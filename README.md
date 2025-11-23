@@ -1,6 +1,9 @@
 # Robo Creative Engine
 
-AI-powered workflow automation for customized merch and marketing campaigns. Generate complete creative packs including taglines, product descriptions, social media posts, image prompts, hashtags, and email content in one click.
+Robo Creative Engine is a full-stack, AI-powered application that generates complete creative campaign packages for customised merchandise brands. It is built specifically to automate repetitive creative work required in product launches, seasonal campaigns, and e-commerce merchandising.
+
+Live Demo: https://roboengine.asapabhi.me/
+Repository: https://github.com/asapabhii/robo-creative-engine
 
 ## Features
 
@@ -16,9 +19,11 @@ AI-powered workflow automation for customized merch and marketing campaigns. Gen
 - **Framework**: Next.js 14 (App Router)
 - **Language**: TypeScript
 - **Styling**: Tailwind CSS
-- **AI Provider**: Hugging Face Inference API
+- **AI Provider**: Mistral-7B-Instruct via Hugging Face Inference Router
 - **Icons**: Lucide React
+- **Runtime**: Node
 - **Deployment**: Vercel
+- **CI – GitHub**: Actions
 
 ## Prerequisites
 
@@ -68,65 +73,6 @@ npm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) in your browser.
-
-### 5. Build for Production
-
-```bash
-npm run build
-npm start
-```
-
-## Deployment on Vercel
-
-### Deploy to Vercel
-
-1. Push your code to GitHub
-2. Go to [vercel.com](https://vercel.com)
-3. Click "New Project"
-4. Import your GitHub repository
-5. Add environment variables:
-   - `HF_API_KEY`: Your Hugging Face API key
-   - `HF_MODEL`: `Qwen/Qwen2.5-7B-Instruct`
-6. Click "Deploy"
-
-### Connect Custom Domain (asapabhi.me)
-
-1. In your Vercel project dashboard, go to "Settings" → "Domains"
-2. Add your custom domain: `asapabhi.me`
-3. Vercel will provide DNS configuration instructions
-4. Go to your domain registrar's DNS settings
-5. Add the following records (values provided by Vercel):
-   - **A Record**: `@` → Vercel's IP address
-   - **CNAME Record**: `www` → `cname.vercel-dns.com`
-6. Wait for DNS propagation (can take up to 48 hours, usually much faster)
-7. Vercel will automatically provision an SSL certificate
-
-## Project Structure
-
-```
-robo-creative-engine/
-├── app/
-│   ├── api/
-│   │   └── generate/
-│   │       └── route.ts          # API endpoint for AI generation
-│   ├── layout.tsx                # Root layout with metadata
-│   ├── page.tsx                  # Main page component
-│   └── globals.css               # Global styles
-├── components/
-│   ├── FormPanel.tsx             # Input form component
-│   ├── ResultPanel.tsx           # Results display component
-│   ├── HistoryPanel.tsx          # Session history component
-│   └── CopyButton.tsx            # Copy-to-clipboard button
-├── lib/
-│   ├── ai.ts                     # Hugging Face integration
-│   └── types.ts                  # TypeScript type definitions
-├── .env.example                  # Environment variables template
-├── .gitignore                    # Git ignore rules
-├── package.json                  # Dependencies and scripts
-├── tailwind.config.ts            # Tailwind configuration
-├── tsconfig.json                 # TypeScript configuration
-└── README.md                     # This file
-```
 
 ## Usage
 
@@ -179,21 +125,6 @@ Note: Some models may require additional permissions or have different rate limi
 - The app includes fallback parsing logic
 - If errors persist, try a different model
 
-## Git Setup
-
-```bash
-git init
-git add .
-git commit -m "Initial commit: Robo Creative Engine"
-git branch -M main
-git remote add origin git@github.com:asapabhii/robo-creative-engine.git
-git push -u origin main
-```
-
-## License
-
-MIT
-
 ## Author
 
-Built by [asapabhii](https://github.com/asapabhii) for the Robo Customized AI + Full-Stack Engineering Internship challenge.
+Built by [asapabhii](https://github.com/asapabhii)
